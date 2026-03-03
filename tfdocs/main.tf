@@ -10,7 +10,7 @@ resource "aws_s3_bucket_website_configuration" "myresume_config" {
 }
 resource "aws_s3_bucket_policy" "myresume_policy" {
   bucket = aws_s3_bucket.myresume.id
-  policy = jsoencode({
+  policy = jsonencode({
     version = "2012-10-17"
     Statement = [
       {
