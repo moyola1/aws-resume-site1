@@ -20,7 +20,7 @@ resource "aws_s3_bucket_public_access_block" "myresume_access" {
 resource "aws_s3_bucket_policy" "myresume_policy" {
   bucket = aws_s3_bucket.myresume.id
   policy = jsonencode({
-    version = "2012-10-17"
+    Version = "2012-10-17"
     Statement = [
       {
         Effect    = "Allow"
