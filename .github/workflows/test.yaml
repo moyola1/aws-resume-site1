@@ -42,3 +42,12 @@ jobs:
           TF_VAR_bucket_name: ${{ secrets.BUCKET_NAME }}
         run: terraform apply -auto-approve
         working-directory: tfdocs
+    
+      - name: Upload Files to S3 Bucket
+        run: |
+          aws s3 cp index.html s://${{ secrets.BUCKET_NAME }}
+          aws s3 cp --recursive css s://${{ secrets.BUCKET_NAME }}/css/
+
+
+        
+
