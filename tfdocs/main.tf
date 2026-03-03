@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "myresume" {
   bucket = var.bucket_name
 }
-resource "aws_s3_bucket_website_configuration" "website_config" {
+resource "aws_s3_bucket_website_configuration" "myresume_config" {
   bucket = aws_s3_bucket.myresume.id
 
   index_document {
@@ -10,7 +10,7 @@ resource "aws_s3_bucket_website_configuration" "website_config" {
 }
 resource "aws_s3_bucket_policy" "myresume_policy" {
   bucket = aws_s3_bucket.myresume.id
-  policy = jsondecode({
+  policy = jsoencode({
     version = "2012-10-17"
     Statement = [
       {
