@@ -1,4 +1,4 @@
-name: Listing S3 Bucket
+name: Create a S3 Bucket
 
 on:
   push:
@@ -11,18 +11,34 @@ permissions:
   contents: read    # This is required for actions/checkout
 
 jobs:
-  listing_butckets:
+  creating_butckets:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v6.0.0
         with:
           role-to-assume: ${{ secrets.IAM_ROLE }}
           aws-region: ${{ secrets.AWS_REGION }}
         
-      - name: List S3 Buckets
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Initialize Terraform
+        run: terraform init
+        working-directory: tfdocs
+
+      - name: Terraform Plan
         env:
-          AWS_REGION: ${{ secrets.AWS_REGION }}
+          BUTCKET_NAME: ${{ secrets.BUCKET_NAME }}
         run: |
-          echo "Listing S3 Buckets"
-          aws s3 ls
+          terraform plan -var="bucket_name=$BUCKET_NAME"
+        working-directory: tfdocs
+     
+      - name: Terraform Apply
+        env:
+          TF_VAR_bucket_name: ${{ secrets.BUCKET_NAME }}
+        run: terraform apply -auto-approve
+        working-directory: tfdocs
