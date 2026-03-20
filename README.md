@@ -58,4 +58,4 @@ The resume project provides hands-on experience with AWS Core Services using AWS
                       "Resource": "arn:aws:s3:::my-resume-site-XXX/*"
                     }
                   ]
-}
+                }   
