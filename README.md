@@ -13,7 +13,7 @@ The resume project provides hands-on experience with AWS Core Services using AWS
             § Object ownership:  ACLs disabled (recommended)
         ○ Block Public Access setting for this bucket
             § Remove "check" Block all public access  (IMPORTANT for website visibility)
-            § Acknowledge that the current settings might result in this bucket…
+            § Acknowledge that the current settings might result in this bucket and the….
         ○ Bucket Versioning
             § Bucket Versioning:  Disable
         ○ Tags
@@ -59,4 +59,3 @@ The resume project provides hands-on experience with AWS Core Services using AWS
                     }
                   ]
                 }
-                
