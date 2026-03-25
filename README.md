@@ -1,6 +1,6 @@
-# AWS Management Console - Resume website 
-The resume project provides hands-on experience with AWS Core Services using AWS Console. The value lies in the implementation of infrastructure as code and CI / CD pipeline with AWS core services IAM, S3, CloudFront Route 53 and Certificate Manager.
-# Console
+# Static Resume website 
+This repository showcases hands‑on AWS projects demonstrating my progression from Cloud Practitioner fundamentals to Solutions Architect–level design. Projects focus on core AWS services, Infrastructure as Code (IaC), CI/CD automation, and architecting secure, scalable, and highly available solutions using AWS best practices.
+## AWS Management Console
 
 1. Login to AWS Management Console
    - Search for "S3" at the search bar
