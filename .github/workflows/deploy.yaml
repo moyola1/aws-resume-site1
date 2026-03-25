@@ -1,4 +1,4 @@
-name: Deploy My Resume Site
+name: Deploy Workflow
 
 on:
 #  push:

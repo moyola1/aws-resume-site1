@@ -30,7 +30,7 @@ The resume project provides hands-on experience with AWS Core Services using AWS
 3. Open created bucket  "my-resume-site-XXX"
    - Properties
       - Leave default options
-   - Permissions
+   1. Permissions
      - Edit Bucket policy:  add new statement  (Take note of Bucket ARN)
        - Add actions:
          - Choose service:  S3
@@ -40,7 +40,7 @@ The resume project provides hands-on experience with AWS Core Services using AWS
           - Resource type:  object
           - Resource ARN:  arn:aws:s3:::my-resume-site-XXX/*
         - Save changes
-     - Alternately Bucket policy generator can be used to create policy
+   2. Alternately Bucket policy generator can be used to create policy
        - AWS Policy Generator
        - https://awspolicygen.s3.amazonaws.com/policygen.html
 

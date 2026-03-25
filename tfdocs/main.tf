@@ -1,6 +1,7 @@
 resource "aws_s3_bucket" "myresume" {
   bucket = var.bucket_name
 }
+/*
 resource "aws_s3_bucket_website_configuration" "myresume_config" {
   bucket = aws_s3_bucket.myresume.id
 
@@ -8,15 +9,16 @@ resource "aws_s3_bucket_website_configuration" "myresume_config" {
     suffix = "index.html"
   }
 }
-
+*/
 resource "aws_s3_bucket_public_access_block" "myresume_access" {
   bucket                  = aws_s3_bucket.myresume.id
-  block_public_acls       = false
-  block_public_policy     = false
-  ignore_public_acls      = false
-  restrict_public_buckets = false
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }
 
+/*
 resource "aws_s3_bucket_policy" "myresume_policy" {
   bucket = aws_s3_bucket.myresume.id
   policy = jsonencode({
@@ -33,3 +35,4 @@ resource "aws_s3_bucket_policy" "myresume_policy" {
 
   depends_on = [ aws_s3_bucket_public_access_block.myresume_access ]
 }
+*/
